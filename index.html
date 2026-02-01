@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>واجب الهندسة المدنية | الأستاذ نوفل</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root { --primary: #0984e3; --dark: #2d3436; --bg: #dfe6e9; }
+        
+        body { font-family: 'Cairo', sans-serif; background-color: var(--bg); margin: 0; padding: 10px; color: var(--dark); }
+        
+        /* زر الطباعة العائم للجوال والحاسوب */
+        .print-btn-container {
+            position: fixed; bottom: 20px; left: 20px; z-index: 1000;
+        }
+        .btn-download {
+            background: #27ae60; color: white; border: none; padding: 15px 25px;
+            border-radius: 50px; font-weight: bold; cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3); font-size: 1rem;
+            display: flex; align-items: center; gap: 10px; transition: 0.3s;
+        }
+        .btn-download:hover { background: #219150; transform: translateY(-2px); }
+
+        .exam-sheet {
+            max-width: 850px; margin: 0 auto 50px auto; background: white;
+            padding: 30px; border: 2px solid var(--dark); border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+
+        .header-info {
+            display: grid; grid-template-columns: 1fr 1fr; border: 1px solid #000;
+            margin-bottom: 20px; text-align: center; font-size: 0.9rem;
+        }
+        .header-info div { padding: 8px; border: 0.5px solid #000; font-weight: bold; }
+
+        .title { text-align: center; text-decoration: underline; font-size: 1.3rem; margin-bottom: 25px; color: var(--primary); font-weight: 900; }
+
+        .section { margin-bottom: 20px; border-right: 5px solid var(--primary); padding-right: 15px; }
+        .section-title { font-weight: 900; color: #d63031; margin-bottom: 10px; }
+        
+        .q-item { margin-bottom: 12px; font-size: 0.95rem; line-height: 1.6; }
+        .q-item b { color: var(--primary); }
+
+        /* تنسيق الطباعة (تحويل لـ PDF) */
+        @media print {
+            .print-btn-container { display: none !important; }
+            body { background: white; padding: 0; }
+            .exam-sheet { border: 1px solid #000; box-shadow: none; width: 100%; margin: 0; padding: 20px; }
+            .section { page-break-inside: avoid; }
+        }
+
+        /* تنسيق خاص للهواتف */
+        @media (max-width: 600px) {
+            .header-info { grid-template-columns: 1fr; }
+            .exam-sheet { padding: 15px; }
+            .title { font-size: 1.1rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="print-btn-container">
+    <button class="btn-download" onclick="window.print()">
+        <span>🖨️ طباعة أو حفظ PDF</span>
+    </button>
+</div>
+
+<div class="exam-sheet" id="printableArea">
+    <div class="header-info">
+        <div>المادة: هندسة مدنية</div>
+        <div>المستوى: 3 ثانوي تقني رياضي</div>
+        <div>الوحدة: المنشآت العلوية</div>
+        <div>الأستاذ: نوفل</div>
+    </div>
+
+    <div class="title">سلسلة تمارين منزلية رقم (01)</div>
+
+    <div class="section">
+        <div class="section-title">المحور الأول: الأعمدة والروافد</div>
+        <div class="q-item"><b>1.</b> عرف العمود (Le Poteau) وما هي طبيعة القوى التي يؤثر بها على الأساس؟</div>
+        <div class="q-item"><b>2.</b> اشرح دور التسليح العرضي في الروافد والأعمدة مبيناً الفرق بينهما.</div>
+        <div class="q-item"><b>3.</b> لماذا نعتبر الروافد الرئيسية هي العناصر الحاملة للأرضية؟</div>
+    </div>
+    
+
+    <div class="section">
+        <div class="section-title">المحور الثاني: الأرضيات والسطوح</div>
+        <div class="q-item"><b>4.</b> اذكر العناصر المكونة للأرضية ذات الأجسام المجوفة وشروط صب بلاطة الانضغاط.</div>
+        <div class="q-item"><b>5.</b> رتب طبقات السطح غير المستغل من الأسفل إلى الأعلى مع ذكر وظيفة خرسانة الميل.</div>
+    </div>
+    
+
+    <div class="section">
+        <div class="section-title">المحور الثالث: المدارج والفتحات</div>
+        <div class="q-item"><b>6.</b> عرف المصطلحات التالية: الحصيرة، القلبة، النائمة، القائمة.</div>
+        <div class="q-item"><b>7.</b> طبق علاقة بلوندل لحساب أبعاد درجة مثالية إذا كان ارتفاع الطابق 3.00م.</div>
+        <div class="q-item"><b>8.</b> ما هو الفرق بين العتيبة (Linteau) والروافد من حيث الموقع والدور؟</div>
+    </div>
+    
+
+    <div class="section">
+        <div class="section-title">المحور الرابع: الغماء والمزاريب</div>
+        <div class="q-item"><b>9.</b> عرف المزاريب (Les Gouttières) واذكر دورها التقني ومواد صنعها.</div>
+        <div class="q-item"><b>10.</b> اذكر ثلاث وضعيات مختلفة لتصريف مياه الأمطار في الغماء المائل.</div>
+    </div>
+
+    <div style="margin-top: 30px; border-top: 1px solid #ccc; padding-top: 10px; font-size: 0.8rem; text-align: center;">
+        <i>بالتوفيق لجميع الطلبة - بكالوريا 2026</i>
+    </div>
+</div>
+
+</body>
+</html>
